@@ -1,0 +1,6 @@
+framework module Pods_JKCrashProtect_Tests {
+  umbrella header "Pods-JKCrashProtect_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

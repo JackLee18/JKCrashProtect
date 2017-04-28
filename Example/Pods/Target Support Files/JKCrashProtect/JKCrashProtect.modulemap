@@ -1,0 +1,6 @@
+framework module JKCrashProtect {
+  umbrella header "JKCrashProtect-umbrella.h"
+
+  export *
+  module * { export * }
+}
