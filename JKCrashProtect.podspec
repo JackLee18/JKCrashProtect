@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JKCrashProtect'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'this is a tool to help developer to avoid crash and also help to collect crash messages.'
 
 # This description is used to generate tags and improve search results.

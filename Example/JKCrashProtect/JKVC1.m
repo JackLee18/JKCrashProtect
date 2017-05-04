@@ -5,10 +5,22 @@
 //  Created by Jack on 17/4/28.
 //  Copyright © 2017年 HHL110120. All rights reserved.
 //
+@interface Country : NSObject
+@property (nonatomic,copy)NSString *name;
+
+@end
+
+@implementation Country
+
+
+@end
+
 @interface Person : NSObject
 
 @property (nonatomic,copy)NSString *name;
 @property (nonatomic,assign)NSInteger age;
+@property (nonatomic,strong)Country *country;
+
 
 @end
 
@@ -33,12 +45,12 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     Person *jack = [Person new];
-    NSArray *obj = @[@"123"];
-    NSObject *object = [NSObject new];
-    //[jack setValue:nil forKey:@"age"];
+    Country *country = [Country new];
+    jack.country =country;
+    [jack setValue:@"111" forKeyPath:@"abc.name"];
     //[jack setValue:obj forKey:@"age"];
    // NSObject *obj = [NSObject new];
-    [object setValue:nil forKey:@"name"];
+   // [object setValue:@"abc" forKey:@"123"];
     
 
 }

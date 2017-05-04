@@ -20,6 +20,13 @@
     [[JKCrashProtect new] JKCrashProtectCollectCrashMessages:crashMessages];
 }
 
+- (nullable id)valueForUndefinedKey:(NSString *)key{
+
+    NSString *crashMessages = [NSString stringWithFormat:@"JKCrashProtect:'Terminating app due to uncaught exception 'NSUnknownKeyException', reason: '[%@ %p valueForUndefinedKey:]: this class is not key value coding-compliant for the key: %@",NSStringFromClass([self class]),self,key];
+    [[JKCrashProtect new] JKCrashProtectCollectCrashMessages:crashMessages];
+    return self;
+}
+
 
 -(id)forwardingTargetForSelector:(SEL)aSelector{
 
