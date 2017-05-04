@@ -7,13 +7,17 @@
 //
 
 #import "JKCrashProtect.h"
-
 @implementation JKCrashProtect
+
+
 
 - (void)JKCrashProtectCollectCrashMessages:(NSString *)crashMessage{
     
     NSLog(@"%@",crashMessage);
     
 }
+
+
+
 
 @end

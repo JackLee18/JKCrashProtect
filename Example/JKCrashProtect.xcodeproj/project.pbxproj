@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04F15A081EB87E9F00C857B0 /* JKCrashProtect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F15A071EB87E9F00C857B0 /* JKCrashProtect.framework */; };
 		04F2FF491EB2D1FD002E6D48 /* JKVC0.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F2FF481EB2D1FD002E6D48 /* JKVC0.m */; };
 		04F2FF4C1EB2D20A002E6D48 /* JKVC1.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F2FF4B1EB2D20A002E6D48 /* JKVC1.m */; };
 		04F2FF571EB3147A002E6D48 /* JKCrashProtect+demo.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F2FF561EB3147A002E6D48 /* JKCrashProtect+demo.m */; };
@@ -26,7 +27,6 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		76D34B5DD906A5F4219ED464 /* Pods_JKCrashProtect_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213D254661AB6DA3ABFAF6A3 /* Pods_JKCrashProtect_Tests.framework */; };
-		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04F15A071EB87E9F00C857B0 /* JKCrashProtect.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JKCrashProtect.framework; path = "../../../Library/Developer/Xcode/DerivedData/JKCrashProtect-bagovpmfmxrdyygtvfnbkpywnrcp/Build/Products/Debug-iphonesimulator/JKCrashProtect/JKCrashProtect.framework"; sourceTree = "<group>"; };
 		04F2FF471EB2D1FD002E6D48 /* JKVC0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKVC0.h; sourceTree = "<group>"; };
 		04F2FF481EB2D1FD002E6D48 /* JKVC0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKVC0.m; sourceTree = "<group>"; };
 		04F2FF4A1EB2D20A002E6D48 /* JKVC1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKVC1.h; sourceTree = "<group>"; };
@@ -73,7 +74,6 @@
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75CB71BFD93D7721A9BD6A37 /* Pods-JKCrashProtect_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JKCrashProtect_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JKCrashProtect_Tests/Pods-JKCrashProtect_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		80D56546DD788C8A0B887AA8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C3C4F853B391D29FDD76682F /* Pods-JKCrashProtect_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JKCrashProtect_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JKCrashProtect_Example/Pods-JKCrashProtect_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D45B54B6A20A6026DF4921CF /* Pods-JKCrashProtect_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JKCrashProtect_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JKCrashProtect_Tests/Pods-JKCrashProtect_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04F15A081EB87E9F00C857B0 /* JKCrashProtect.framework in Frameworks */,
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
@@ -139,6 +140,7 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04F15A071EB87E9F00C857B0 /* JKCrashProtect.framework */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
@@ -154,11 +156,10 @@
 			children = (
 				6003F59C195388D20070C39A /* JKAppDelegate.h */,
 				6003F59D195388D20070C39A /* JKAppDelegate.m */,
-				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
-				6003F5A5195388D20070C39A /* JKViewController.h */,
-				6003F5A6195388D20070C39A /* JKViewController.m */,
 				04F2FF551EB3147A002E6D48 /* JKCrashProtect+demo.h */,
 				04F2FF561EB3147A002E6D48 /* JKCrashProtect+demo.m */,
+				6003F5A5195388D20070C39A /* JKViewController.h */,
+				6003F5A6195388D20070C39A /* JKViewController.m */,
 				04F2FF471EB2D1FD002E6D48 /* JKVC0.h */,
 				04F2FF481EB2D1FD002E6D48 /* JKVC0.m */,
 				04F2FF4A1EB2D20A002E6D48 /* JKVC1.h */,
@@ -294,7 +295,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
