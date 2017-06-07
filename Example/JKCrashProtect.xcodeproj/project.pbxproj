@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04A8C8321EE2486B00E6EB23 /* JKVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A8C8311EE2486B00E6EB23 /* JKVC2.m */; };
+		04A8C8381EE2C90700E6EB23 /* JKPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A8C8371EE2C90700E6EB23 /* JKPerson.m */; };
 		04F15A081EB87E9F00C857B0 /* JKCrashProtect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F15A071EB87E9F00C857B0 /* JKCrashProtect.framework */; };
 		04F2FF491EB2D1FD002E6D48 /* JKVC0.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F2FF481EB2D1FD002E6D48 /* JKVC0.m */; };
 		04F2FF4C1EB2D20A002E6D48 /* JKVC1.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F2FF4B1EB2D20A002E6D48 /* JKVC1.m */; };
@@ -40,6 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04A8C8301EE2486B00E6EB23 /* JKVC2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKVC2.h; sourceTree = "<group>"; };
+		04A8C8311EE2486B00E6EB23 /* JKVC2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKVC2.m; sourceTree = "<group>"; };
+		04A8C8361EE2C90700E6EB23 /* JKPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKPerson.h; sourceTree = "<group>"; };
+		04A8C8371EE2C90700E6EB23 /* JKPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKPerson.m; sourceTree = "<group>"; };
 		04F15A071EB87E9F00C857B0 /* JKCrashProtect.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JKCrashProtect.framework; path = "../../../Library/Developer/Xcode/DerivedData/JKCrashProtect-bagovpmfmxrdyygtvfnbkpywnrcp/Build/Products/Debug-iphonesimulator/JKCrashProtect/JKCrashProtect.framework"; sourceTree = "<group>"; };
 		04F2FF471EB2D1FD002E6D48 /* JKVC0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKVC0.h; sourceTree = "<group>"; };
 		04F2FF481EB2D1FD002E6D48 /* JKVC0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKVC0.m; sourceTree = "<group>"; };
@@ -164,6 +170,10 @@
 				04F2FF481EB2D1FD002E6D48 /* JKVC0.m */,
 				04F2FF4A1EB2D20A002E6D48 /* JKVC1.h */,
 				04F2FF4B1EB2D20A002E6D48 /* JKVC1.m */,
+				04A8C8301EE2486B00E6EB23 /* JKVC2.h */,
+				04A8C8311EE2486B00E6EB23 /* JKVC2.m */,
+				04A8C8361EE2C90700E6EB23 /* JKPerson.h */,
+				04A8C8371EE2C90700E6EB23 /* JKPerson.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -410,6 +420,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				04F2FF4C1EB2D20A002E6D48 /* JKVC1.m in Sources */,
+				04A8C8321EE2486B00E6EB23 /* JKVC2.m in Sources */,
+				04A8C8381EE2C90700E6EB23 /* JKPerson.m in Sources */,
 				04F2FF491EB2D1FD002E6D48 /* JKVC0.m in Sources */,
 				6003F59E195388D20070C39A /* JKAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* JKViewController.m in Sources */,

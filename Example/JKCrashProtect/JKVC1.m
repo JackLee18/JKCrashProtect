@@ -46,9 +46,9 @@
     self.view.backgroundColor = [UIColor whiteColor];
     Person *jack = [Person new];
     Country *country = [Country new];
-    jack.country =country;
-    [jack setValue:@"111" forKeyPath:@"abc.name"];
-    //[jack setValue:obj forKey:@"age"];
+    //jack.country =country;
+    //[jack setValue:@"111" forKeyPath:@"abc.name"];
+    [jack setValue:nil forKey:@"111"];
    // NSObject *obj = [NSObject new];
    // [object setValue:@"abc" forKey:@"123"];
     

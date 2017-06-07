@@ -8,7 +8,7 @@
 
 #import "JKVC0.h"
 
-@interface JKVC0 ()
+@interface JKVC0 ()<UITextFieldDelegate,UITextViewDelegate>
 
 @end
 
@@ -29,6 +29,18 @@
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(JKTapped)];
     [self.view addGestureRecognizer:tap];
+    
+    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 200, 30)];
+    textField.center = CGPointMake(self.view.center.x, self.view.center.y+100);
+    textField.backgroundColor = [UIColor yellowColor];
+    textField.delegate = self;
+    [self.view addSubview:textField];
+    
+    UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, 200, 60)];
+    textView.center = CGPointMake(self.view.center.x, self.view.center.y+150);
+    textView.backgroundColor = [UIColor redColor];
+    textView.delegate = self;
+    [self.view addSubview:textView];
 
 
 }
@@ -37,6 +49,12 @@
 //
 //    NSLog(@"JKClicked");
 //}
+
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+
+
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
