@@ -12,6 +12,9 @@
 
 @implementation NSObject (JKCrashProtect)
 
+static char KVOHashTableKey;
+
+
 + (void)load{
 
     static dispatch_once_t onceToken;
@@ -20,7 +23,6 @@
        
       [self JKCrashProtectswizzleMethod:@selector(addObserver:forKeyPath:options:context:) withMethod:@selector(JKCrashProtectaddObserver:forKeyPath:options:context:) withClass:[NSObject class]];
         
-        [self JKCrashProtectswizzleMethod:@selector(removeObserver:forKeyPath:context:) withMethod:@selector(JKCrashProtectremoveObserver:forKeyPath:context:) withClass:[NSObject class]];
         [self JKCrashProtectswizzleMethod:@selector(removeObserver:forKeyPath:) withMethod:@selector(JKCrashProtectremoveObserver:forKeyPath:) withClass:[NSObject class]];
         
     });
@@ -69,19 +71,30 @@
 
 #pragma mark --- KVOCrashProtect
 
+- (void)setKVOHashTable:(NSHashTable *)KVOHasTable{
+    objc_setAssociatedObject(self, &KVOHashTableKey, KVOHasTable, OBJC_ASSOCIATION_RETAIN);
+}
+
+
+- (NSHashTable *)KVOHashTable{
+    
+    return objc_getAssociatedObject(self, &KVOHashTableKey);
+    
+}
+
 - (void)JKCrashProtectaddObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options context:(nullable void *)context{
     if ([observer isKindOfClass:[UIViewController class]]) {
         
         @synchronized (self) {
             NSInteger kvoHash = [self _JKCrashProtectHash:observer :keyPath];
-             UIViewController *currentVC = (UIViewController *)observer;
+
         
-            if (!currentVC.KVOHashTable) {
-                currentVC.KVOHashTable = [NSHashTable hashTableWithOptions:NSPointerFunctionsStrongMemory];
+            if (!self.KVOHashTable) {
+                self.KVOHashTable = [NSHashTable hashTableWithOptions:NSPointerFunctionsStrongMemory];
             }
         
-        if (![currentVC.KVOHashTable containsObject:@(kvoHash)]) {
-            [currentVC.KVOHashTable addObject:@(kvoHash)];
+        if (![self.KVOHashTable containsObject:@(kvoHash)]) {
+            [self.KVOHashTable addObject:@(kvoHash)];
             [self JKCrashProtectaddObserver:observer forKeyPath:keyPath options:options context:context];
         }
         
@@ -96,30 +109,6 @@
 }
 
 
-//- (void)JKCrashProtectremoveObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath context:(nullable void *)context{
-//    
-//    if ([observer isKindOfClass:[UIViewController class]]) {
-//        NSInteger kvoHash = [self _JKCrashProtectHash:observer :keyPath];
-//        UIViewController *currentVC = (UIViewController *)observer;
-//        NSLock *lock =[[NSLock  alloc]init];
-//        [lock tryLock];
-//        if (!currentVC.KVOHashTable) {
-//            currentVC.KVOHashTable = [NSHashTable hashTableWithOptions:NSPointerFunctionsStrongMemory];
-//        }
-//        if ([currentVC.KVOHashTable containsObject:@(kvoHash)]) {
-//            [currentVC.KVOHashTable removeObject:@(kvoHash)];
-//            [self JKCrashProtectremoveObserver:observer forKeyPath:keyPath context:context];
-//        }
-//        [lock unlock];
-//        
-//    }else{
-//        
-//        [self JKCrashProtectremoveObserver:observer forKeyPath:keyPath context:context];
-//        
-//    }
-//}
-
-
 - (void)JKCrashProtectremoveObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath{
 
     if ([observer isKindOfClass:[UIViewController class]]) {
@@ -127,18 +116,15 @@
         @synchronized (self) {
        
             if (!observer) {
-                NSLog(@"observer不存在了");
                 return;
             }
             NSInteger kvoHash = [self _JKCrashProtectHash:observer :keyPath];
-            UIViewController *currentVC = (UIViewController *)observer;
-            NSHashTable *hashTable = currentVC.KVOHashTable;
+            NSHashTable *hashTable = [self KVOHashTable];
             if (!hashTable) {
                 return;
             }
             
 
-            
             if ([hashTable containsObject:@(kvoHash)]) {
                 [hashTable removeObject:@(kvoHash)];
                 [self JKCrashProtectremoveObserver:observer forKeyPath:keyPath];

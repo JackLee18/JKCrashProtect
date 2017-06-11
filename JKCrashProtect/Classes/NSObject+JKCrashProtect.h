@@ -10,6 +10,9 @@
 
 @interface NSObject (JKCrashProtect)
 
+@property (nonatomic,strong) NSHashTable *KVOHashTable;
+
+
 + (void)JKCrashProtectswizzleMethod:(SEL)origSelector withMethod:(SEL)newSelector withClass:(Class)targetClass;
 
 @end
