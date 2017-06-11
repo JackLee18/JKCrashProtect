@@ -10,4 +10,6 @@
 
 @interface NSObject (JKCrashProtect)
 
++ (void)JKCrashProtectswizzleMethod:(SEL)origSelector withMethod:(SEL)newSelector withClass:(Class)targetClass;
+
 @end

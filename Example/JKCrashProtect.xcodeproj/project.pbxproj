@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		046BD0831EEB06C5006AF788 /* JKCrashProtect+demo.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F2FF561EB3147A002E6D48 /* JKCrashProtect+demo.m */; };
 		04A8C8321EE2486B00E6EB23 /* JKVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A8C8311EE2486B00E6EB23 /* JKVC2.m */; };
 		04A8C8381EE2C90700E6EB23 /* JKPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A8C8371EE2C90700E6EB23 /* JKPerson.m */; };
 		04F15A081EB87E9F00C857B0 /* JKCrashProtect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F15A071EB87E9F00C857B0 /* JKCrashProtect.framework */; };
 		04F2FF491EB2D1FD002E6D48 /* JKVC0.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F2FF481EB2D1FD002E6D48 /* JKVC0.m */; };
 		04F2FF4C1EB2D20A002E6D48 /* JKVC1.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F2FF4B1EB2D20A002E6D48 /* JKVC1.m */; };
-		04F2FF571EB3147A002E6D48 /* JKCrashProtect+demo.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F2FF561EB3147A002E6D48 /* JKCrashProtect+demo.m */; };
 		34ABDFD192B4E9788D95A957 /* Pods_JKCrashProtect_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C895571B69803A77BC1A2D /* Pods_JKCrashProtect_Example.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -273,7 +273,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = JK;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = HHL110120;
 				TargetAttributes = {
 					6003F5AD195388D20070C39A = {
@@ -419,6 +419,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046BD0831EEB06C5006AF788 /* JKCrashProtect+demo.m in Sources */,
 				04F2FF4C1EB2D20A002E6D48 /* JKVC1.m in Sources */,
 				04A8C8321EE2486B00E6EB23 /* JKVC2.m in Sources */,
 				04A8C8381EE2C90700E6EB23 /* JKPerson.m in Sources */,
@@ -426,7 +427,6 @@
 				6003F59E195388D20070C39A /* JKAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* JKViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
-				04F2FF571EB3147A002E6D48 /* JKCrashProtect+demo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,14 +489,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -529,13 +534,18 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -557,6 +567,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JKCrashProtect/JKCrashProtect-Prefix.pch";
 				INFOPLIST_FILE = "JKCrashProtect/JKCrashProtect-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -572,6 +583,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JKCrashProtect/JKCrashProtect-Prefix.pch";
 				INFOPLIST_FILE = "JKCrashProtect/JKCrashProtect-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";

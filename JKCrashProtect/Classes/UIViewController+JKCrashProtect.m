@@ -8,17 +8,31 @@
 
 #import "UIViewController+JKCrashProtect.h"
 #import <objc/runtime.h>
+#import <pthread/pthread.h>
+
 @implementation UIViewController (JKCrashProtect)
 
-static char KVOHasTableKey;
+static char KVOHashTableKey;
 
-- (NSHashTable *)KVOHasTable{
 
-    return objc_getAssociatedObject(self, &KVOHasTableKey);
+- (void)setKVOHashTable:(NSHashTable *)KVOHasTable{
+    objc_setAssociatedObject(self, &KVOHashTableKey, KVOHasTable, OBJC_ASSOCIATION_RETAIN);
 }
 
-- (void)setKVOHasTable:(NSHashTable *)KVOHasTable{
-    objc_setAssociatedObject(self, &KVOHasTableKey, KVOHasTable, OBJC_ASSOCIATION_RETAIN);
+
+- (NSHashTable *)KVOHashTable{
+    
+    return objc_getAssociatedObject(self, &KVOHashTableKey);
+    
 }
+
+
+    
+
+    
+
+
+
+
 
 @end

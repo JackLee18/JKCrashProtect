@@ -10,6 +10,6 @@
 
 @interface UIViewController (JKCrashProtect)
 
-@property (nonatomic,strong) NSHashTable *KVOHasTable;
+@property (nonatomic,strong) NSHashTable *KVOHashTable;
 
 @end

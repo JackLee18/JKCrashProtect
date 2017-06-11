@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UIViewController+JKCrashProtect.h"
 
 @interface JKCrashProtect : NSObject
 
