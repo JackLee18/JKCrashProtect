@@ -23,7 +23,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = [UIColor whiteColor];
-    _dataArray = @[@"unrecognized selector sent to instance",@"KVC产生的crash",@"KVO产生的crash",@"单元格选中事件"];
+    _dataArray = @[@"unrecognized selector sent to instance",@"KVC产生的crash",@"KVO产生的crash",@"Notification产生的crash"];
     
     _contentTable = [[UITableView alloc] initWithFrame:self.view.frame];
     [_contentTable registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell1"];

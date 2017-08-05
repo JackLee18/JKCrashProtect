@@ -13,6 +13,7 @@
 @implementation NSObject (JKCrashProtect)
 
 static char KVOHashTableKey;
+static char isAspectedKey;
 
 
 + (void)load{
@@ -63,6 +64,10 @@ static char KVOHashTableKey;
         
         return nil;
     }
+    if (self.isAspected) {
+        return self;
+
+    }
     JKCrashProtect *protect = [JKCrashProtect new];
     protect.crashMessages =[NSString stringWithFormat:@"JKCrashProtect: [%@ %p %@]: unrecognized selector sent to instance",NSStringFromClass([self class]),self,NSStringFromSelector(aSelector)];
     class_addMethod([JKCrashProtect class], aSelector, [protect methodForSelector:@selector(JKCrashProtectCollectCrashMessages)], "v@:");
@@ -79,6 +84,17 @@ static char KVOHashTableKey;
 - (NSHashTable *)KVOHashTable{
     
     return objc_getAssociatedObject(self, &KVOHashTableKey);
+    
+}
+
+- (void)setIsAspected:(BOOL)isAspected{
+    objc_setAssociatedObject(self, &isAspectedKey, @(isAspected), OBJC_ASSOCIATION_ASSIGN);
+}
+
+
+- (BOOL)isAspected{
+    
+    return objc_getAssociatedObject(self, &isAspectedKey);
     
 }
 
@@ -182,6 +198,29 @@ static char KVOHashTableKey;
     NSInteger hash = [KVOContentArr hash];
     return hash;
 }
+
+- (id)JKCrashProtectperformSelector:(SEL)aSelector withObjects:(NSArray *)objects {
+    NSMethodSignature *signature = [self methodSignatureForSelector:aSelector];
+    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
+    [invocation setTarget:self];
+    [invocation setSelector:aSelector];
+    
+    NSUInteger i = 1;
+    
+    for (id object in objects) {
+        id tempObject = object;
+        [invocation setArgument:&tempObject atIndex:++i];
+    }
+    [invocation invoke];
+    
+    if ([signature methodReturnLength]) {
+        id data;
+        [invocation getReturnValue:&data];
+        return data;
+    }
+    return nil;
+}
+
 
 
 

@@ -39,6 +39,6 @@ this is a tool to help developer to avoid crash and also help to collect crash m
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
-#s.dependency 'JKUBSAspects'
+  s.dependency 'JKUBSAspects', '~> 0.1.0'
 
 end

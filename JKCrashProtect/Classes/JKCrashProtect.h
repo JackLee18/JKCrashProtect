@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface JKCrashProtect : NSObject
 
 @property (nonatomic,copy) NSString *crashMessages;
