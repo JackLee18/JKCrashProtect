@@ -1,6 +1,6 @@
 {
   "name": "JKCrashProtect",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "summary": "this is a tool to help developer to avoid crash and also help to collect crash messages.",
   "description": "this is a tool to help developer to avoid crash and also help to collect crash messages.",
   "homepage": "https://github.com/xindizhiyin2014/JKCrashProtect",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/xindizhiyin2014/JKCrashProtect.git",
-    "tag": "0.1.6"
+    "tag": "0.2.0"
   },
   "platforms": {
     "ios": "7.0"

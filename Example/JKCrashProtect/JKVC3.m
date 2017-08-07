@@ -42,9 +42,11 @@
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
          [[NSThread currentThread] setName:@"childthread"];
         NSLog(@"thread name111 %@",[NSThread currentThread].name);
-        NSNotification *notif = [[NSNotification alloc] initWithName:@"printLog" object:nil userInfo:nil];
-        [[NSNotificationCenter defaultCenter] postNotification:notif handleThread:[NSThread mainThread]];
-//[[NSNotificationCenter defaultCenter] postNotificationName:@"printLog" object:nil];
+        //NSNotification *notif = [[NSNotification alloc] initWithName:@"printLog" object:nil userInfo:nil];
+        //[[NSNotificationCenter defaultCenter] postNotification:notif handleThread:nil];
+        //[[NSNotificationCenter defaultCenter]  postNotificationName:@"printLog" object:@(123) handleThread:[NSThread mainThread]];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"printLog" object:@"123" userInfo:@{@"name":@"jack"} handleThread:[NSThread mainThread]];
+
 
        
 
@@ -57,13 +59,10 @@
 
 - (void)printLog:(NSNotification *)notification{
 
+    NSLog(@"%@",notification);
     NSLog(@"thread name222 %@",[NSThread currentThread].name);
 }
 
-- (void)dealloc{
-    
-
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

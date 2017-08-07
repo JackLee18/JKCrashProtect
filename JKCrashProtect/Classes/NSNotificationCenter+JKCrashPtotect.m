@@ -11,6 +11,7 @@
 #import <JKUBSAspects/JKUBSAspects.h>
 
 @implementation NSNotificationCenter (JKCrashPtotect)
+
 + (void)load{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -36,9 +37,14 @@
         NSArray *arguments = [data arguments];
         NSNotification *notif =arguments[0];
         
-        NSThread *thread = notif.userInfo[@"thread"];
-        NSInvocation *invocation = [data originalInvocation];
-        [invocation performSelector:@selector(invoke) onThread:thread withObject:nil waitUntilDone:NO];
+         NSThread *thread = notif.userInfo[@"thread"];
+        thread=[thread isKindOfClass:[NSThread class]]?thread:[NSThread currentThread];
+         NSInvocation *invocation = [data originalInvocation];
+        SEL selector =invocation.selector;
+        id currentTarget = invocation.target;
+        [currentTarget performSelector:selector onThread:thread withObject:notif waitUntilDone:NO];
+        NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
+        [runLoop run];
        
         
     } error:nil];
@@ -49,17 +55,17 @@
     NSNotificationName aName =notification.name;
     NSDictionary *userInfo = notification.userInfo;
     id object = notification.object;
-    thread=thread?:[NSThread mainThread];
 
     if (userInfo) {
         NSMutableDictionary  *dic = [NSMutableDictionary dictionaryWithDictionary:userInfo];
-        [dic setObject:thread forKey:@"thread"];
+        [dic setObject:thread?:@"" forKey:@"thread"];
         userInfo = [dic copy];
     }else{
-        userInfo =@{@"thread":thread};
+        userInfo =@{@"thread":thread?:@""};
             
     }
-    NSNotification *notif = [[NSNotification alloc] initWithName:aName object:object userInfo:userInfo];
+    
+     NSNotification *notif = [[NSNotification alloc] initWithName:aName object:object userInfo:userInfo];
     [[NSNotificationCenter defaultCenter] postNotification:notif];
     
 
@@ -72,14 +78,13 @@
 
 - (void)postNotificationName:(nonnull NSNotificationName)aName object:(nullable id)anObject userInfo:(nullable NSDictionary *)aUserInfo handleThread:(nullable NSThread *)thread{
 
-    thread=thread?:[NSThread mainThread];
     if (aUserInfo) {
         NSMutableDictionary  *dic = [NSMutableDictionary dictionaryWithDictionary:aUserInfo];
-        [dic setObject:thread forKey:@"thread"];
+        [dic setObject:thread?:@"" forKey:@"thread"];
         aUserInfo = [dic copy];
     }else{
         
-            aUserInfo =@{@"thread":thread};
+            aUserInfo =@{@"thread":thread?:@""};
         
     }
     [[NSNotificationCenter defaultCenter] postNotificationName:aName object:anObject userInfo:aUserInfo];

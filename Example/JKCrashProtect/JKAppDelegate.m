@@ -17,7 +17,6 @@
     JKViewController *jkVC = [JKViewController new];
     UINavigationController *naVC = [[UINavigationController alloc] initWithRootViewController:jkVC];
     self.window.rootViewController = naVC;
-    [JKCrashProtect registerJKCrashProtect];
     return YES;
 }
 
