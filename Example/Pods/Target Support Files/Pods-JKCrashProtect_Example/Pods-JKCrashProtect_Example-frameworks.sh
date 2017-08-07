@@ -85,7 +85,9 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/JKCrashProtect/JKCrashProtect.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/JKUBSAspects/JKUBSAspects.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/JKCrashProtect/JKCrashProtect.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/JKUBSAspects/JKUBSAspects.framework"
 fi

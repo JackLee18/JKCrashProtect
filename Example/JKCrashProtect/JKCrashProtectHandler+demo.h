@@ -6,8 +6,8 @@
 //  Copyright © 2017年 HHL110120. All rights reserved.
 //
 
-#import "JKCrashProtect.h"
+#import <JKCrashProtect/JKCrashProtectHandler.h>
 
-@interface JKCrashProtect (demo)
+@interface JKCrashProtectHandler (demo)
 
 @end

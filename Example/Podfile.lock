@@ -1,5 +1,7 @@
 PODS:
-  - JKCrashProtect (0.1.4)
+  - JKCrashProtect (0.2.0):
+    - JKUBSAspects (~> 0.1.0)
+  - JKUBSAspects (0.1.0)
   - Kiwi (2.4.0)
 
 DEPENDENCIES:
@@ -11,7 +13,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JKCrashProtect: 27742b2a1579a784e0fce688113e38dbc1c2b416
+  JKCrashProtect: 1dad6ab269153111acaf951328aa28bf1c90f553
+  JKUBSAspects: fa3a3e653409030ff169ae9d985302d16fe1aec4
   Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
 
 PODFILE CHECKSUM: a86e051189e5eed1a1bb34b31bda204ec92b9435
